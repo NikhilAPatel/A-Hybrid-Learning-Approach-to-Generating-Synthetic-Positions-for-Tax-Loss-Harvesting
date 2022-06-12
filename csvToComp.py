@@ -1,6 +1,6 @@
 import csv
 rows = []
-with open("SNP-Comp-June11.csv", 'r') as file:
+with open("Data/sptm-comp-june-8.csv", 'r') as file:
     csvreader = csv.reader(file)
     for row in csvreader:
         rows.append(row)

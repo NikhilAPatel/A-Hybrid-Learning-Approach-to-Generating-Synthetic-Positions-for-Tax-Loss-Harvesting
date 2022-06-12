@@ -2,10 +2,10 @@ import pickle
 import yfinance as yf
 from statistics import mode
 
-start_date = "2021-01-09"  # TODO choose real start date
-end_date = "2022-01-10"  # TODO choose real end date
+start_date = "2015-01-01"
+end_date = "2022-01-02"
 
-snp_comp_file = open('snp_composition.obj', 'rb')
+snp_comp_file = open('sptm_composition.obj', 'rb')
 snp_composition = pickle.load(snp_comp_file)
 snp_comp_file.close()
 all_tickers = snp_composition.keys()
@@ -39,10 +39,10 @@ for ticker in unavailable:
     price_history.pop(ticker)
     snp_composition.pop(ticker)
 
-snp_price_file = open('snp_price.obj', 'wb')
+snp_price_file = open('sptm_price.obj', 'wb')
 pickle.dump(price_history, snp_price_file)
 snp_price_file.close()
 
-file_snp_comp = open('snp_composition.obj', 'wb')
+file_snp_comp = open('sptm_composition.obj', 'wb')
 pickle.dump(snp_composition, file_snp_comp)
 file_snp_comp.close()
